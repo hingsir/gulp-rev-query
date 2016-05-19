@@ -1,0 +1,25 @@
+{
+  "name": "gulp-rev-query",
+  "version": "1.0.0",
+  "description": "chang gulp-rev manifest to url query format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hingsir/gulp-rev-query.git"
+  },
+  "keywords": [
+    "gulp-rev"
+  ],
+  "author": "hingsir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hingsir/gulp-rev-query/issues"
+  },
+  "homepage": "https://github.com/hingsir/gulp-rev-query#readme",
+  "dependencies": {
+    "through2": "^2.0.1"
+  }
+}
