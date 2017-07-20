@@ -5,10 +5,13 @@ module.exports = function(ver) {
     // convert a-xxxxxxxx.css to a.css?ver=xxxxxxxx
     function hashToQuery(file) {
         var content = new String(file.contents);
-        content = content.replace(/(\-(\w+))(\.\w+)/g, function($, $1, $2, $3) {
-            return $3 + '?' + ver + '=' + $2;
-        })
-        file.contents = new Buffer(content);
+        var manifestObj = JSON.parse(content)
+        for(var key in manifestObj){
+            manifestObj[key] = manifestObj[key].replace(/(\-(\w+))(\.\w+)/g, function($, $1, $2, $3) {
+                return $3 + '?' + ver + '=' + $2;
+            })
+        }
+        file.contents = new Buffer(JSON.stringify(manifestObj, null, '\t'));
         file.ver = ver;
         return file;
     }
