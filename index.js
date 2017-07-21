@@ -7,7 +7,7 @@ module.exports = function(ver) {
         var content = new String(file.contents);
         var manifestObj = JSON.parse(content)
         for(var key in manifestObj){
-            manifestObj[key] = manifestObj[key].replace(/(\-(\w+))(\.\w+)/g, function($, $1, $2, $3) {
+            manifestObj[key] = manifestObj[key].replace(/(\-(\w+))((\.\w+)+)/g, function($, $1, $2, $3) {
                 return $3 + '?' + ver + '=' + $2;
             })
         }
